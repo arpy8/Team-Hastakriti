@@ -1,7 +1,15 @@
 # Development of cost-effective myoelectric prosthesis
 
 ## Overview
-This project aims to develop a cost-effective, 3D-printed myoelectric prosthetic hand using custom PET-based filament made from recycled PET bottles. Our solution integrates sustainability and innovation by providing an affordable prosthetic device while reducing plastic waste, making the project eco-friendly and accessible.
+This project aims to develop a cost-effective, 3D-printed myoelectric prosthetic hand using biodegradable PLA-based filament. Our solution integrates sustainability and innovation by providing an affordable prosthetic device while reducing plastic waste, making the project eco-friendly and accessible to a wider audience.
+
+## Directory Structure
+- [CAD Design](/CAD%20Design/): Contains the STL files for 3D printing the prosthetic hand parts.
+- [Microcontroller](/Microcontroller/): Contains the Arduino code for myoelectric integration.
+- [Mobile App](/Mobile%20App/): Contains the code for the mobile app.
+- [Website](/Website/): Contains the code for the website.
+- [Rehab Module](/Rehab%20Module/): Contains the code for the rehabilitation module.
+- [Graph Visualizer](/Graph%20Visualizer/): Contains the code for the graph visualizer.
 
 ## Installation & Setup
 1. **3D Printing the Parts:**
