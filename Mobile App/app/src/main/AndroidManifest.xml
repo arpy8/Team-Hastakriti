@@ -1,0 +1,66 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.handcontroller">
+
+    <!-- Core Bluetooth Permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- Modern Bluetooth Permissions for Android 12+ -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- Location Permissions (needed for Bluetooth scanning on some devices) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Internet Permission (if needed for data upload or APIs) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Foreground Service Permission (required for background Bluetooth connection) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Wake Lock Permission (to prevent the device from sleeping during critical operations) -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Required for vibration support (if the prosthetic sends vibration feedback) -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Application Configuration -->
+    <application
+        android:allowBackup="true"
+        android:label="Prosthetic Arm App"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HandController">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+
+        <!-- Metadata for Bluetooth Scanning (Android 12+ compatibility) -->
+        <meta-data
+            android:name="android.bluetooth.le.BLUETOOTH_SCAN"
+            android:value="true" />
+
+        <!-- Metadata for Bluetooth Advertising -->
+        <meta-data
+            android:name="android.bluetooth.le.BLUETOOTH_ADVERTISE"
+            android:value="true" />
+
+    </application>
+</manifest>

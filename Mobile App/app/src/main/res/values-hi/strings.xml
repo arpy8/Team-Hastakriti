@@ -1,0 +1,27 @@
+<resources>
+    <string name="prosthetic_arm_status">प्रोस्थेटिक हाथ की स्थिति</string>
+    <string name="sensor_1">सेंसर 1</string>
+    <string name="sensor_2">सेंसर 2</string>
+    <string name="connect_to_bluetooth">ब्लूटूथ से कनेक्ट करें</string>
+    <string name="settings_and_calibration">सेटिंग्स और कैलिब्रेशन</string>
+    <string name="select_language">भाषा चुनें</string>
+    <string name="english">अंग्रेजी</string>
+    <string name="hindi">हिंदी</string>
+    <string name="tamil">तमिल</string>
+    <string name="telugu">तेलुगु</string>
+    <string name="malayalam">मलयालम</string>
+    <string name="home">मुख्य पृष्ठ</string>
+    <string name="settings">सेटिंग्स</string>
+    <string name="calibrate">कैलिब्रेट करें</string>
+    <string name="calibration">अंशांकन</string>
+    <string name="language">भाषा</string>
+
+
+    <string-array name="language_options">
+        <item>अंग्रेजी</item>
+        <item>हिंदी</item>
+        <item>तमिल</item>
+        <item>तेलुगु</item>
+        <item>मलयालम</item>
+    </string-array>
+</resources>

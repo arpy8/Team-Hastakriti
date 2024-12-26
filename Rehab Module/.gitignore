@@ -1,0 +1,7 @@
+*.txt
+*test*
+
+raw/
+*_ignr_*
+
+misc/
