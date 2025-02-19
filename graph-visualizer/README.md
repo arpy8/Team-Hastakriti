@@ -1,7 +1,7 @@
-# Tauri + React + Typescript
+![image](https://github.com/user-attachments/assets/c04c129e-fbb1-4ed8-b86a-58863fc17d75)# Graph Visualizer
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+A custom serial plotter we made using [Tauri](https://v2.tauri.app/) because Arduino's just wasn't good enough
 
-## Recommended IDE Setup
+## Preview
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+![image](https://github.com/user-attachments/assets/acadb3eb-37b2-43a6-9925-06546ee7e6a9)
