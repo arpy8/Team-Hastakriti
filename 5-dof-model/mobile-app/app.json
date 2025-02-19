@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Hand Controller",
+    "slug": "hastakriti-hand-controller",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icons/icon.png",
+    "scheme": "hastakriti",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/icons/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#68ccc5"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icons/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.arpy8.hastakritihandcontroller"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/icons/icon.png",
+      "babel": {
+        "include": ["@expo/vector-icons", "react-native-web"]
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "db280ef6-bea4-4275-93d7-f66c2bb20462"
+      }
+    }
+  },
+  "web": {
+    "output": "server",
+    "bundler": "metro"
+  }
+}
