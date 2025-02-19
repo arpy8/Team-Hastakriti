@@ -158,9 +158,9 @@ def read_continuous_serial(port='COM5', baudrate=9600, timeout=1):
     global curr_count
     
     try:
-        ser = setup_serial_connection(port, baudrate, timeout)
-        time.sleep(2)
-        ser.reset_input_buffer()
+        # ser = setup_serial_connection(port, baudrate, timeout)
+        # time.sleep(2)
+        # ser.reset_input_buffer()
 
         temp = []
         count = 0
