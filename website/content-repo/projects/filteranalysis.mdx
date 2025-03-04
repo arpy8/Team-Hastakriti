@@ -1,0 +1,82 @@
+---
+published: true
+title: "Analysis of Digital Filtering Design Based on Surface EMG Signals"
+description: An innovative project that revolutionizes the way we interact with technology by designing a Butterworth IIR digital filter to obtain desirable surface EMG signals.
+date: 2023-04-14
+url: https://www.semanticscholar.org/paper/Analysis-of-Digital-Filtering-Design-Based-on-EMG-Xiao-Ye/cef119cb9202d4b09464ad872fdacfa10906dedc
+---
+
+export const title = "Analysis of Digital Filtering Design Based on Surface EMG Signals";
+
+# {title}
+
+## Abstract
+
+In this project, we designed a Butterworth Infinite Impulse Response (IIR) digital filter to clean up surface Electromyography (sEMG) signals. Think of sEMG signals as the electrical activity produced by your muscles when they contract. These signals can get noisy, much like trying to hear a conversation in a crowded room. Our digital filter helps to clear out the noise, making the muscle signals easier to understand. We specifically target noise from industrial electrical interference (at 50 Hz) and slow fluctuations in the signal (baseline drift). The results show that our filter can significantly reduce noise and make the sEMG signals much cleaner, which is great for developing smaller, more practical EMG devices.
+
+## Introduction
+
+Surface electromyography (sEMG) is a technique used to measure the electrical activity produced by skeletal muscles. Imagine trying to listen to a friend talking in a noisy room; the background noise makes it hard to hear them clearly. Similarly, sEMG signals are often contaminated with noise, making it essential to design effective filtering techniques to obtain clean and usable data. This paper discusses the development of a Butterworth IIR digital filter to replace high-cost analog filters, aiming to achieve desirable sEMG signals by addressing noise from industrial frequency interference (typically at 50 Hz) and baseline drift.
+
+## Methodology
+
+### Digital Filtering Design
+
+The digital filtering design includes the following components:
+
+1. **50 Hz Interference Trap**: This component is designed to specifically target and attenuate the 50 Hz frequency, which is a common source of noise due to industrial electrical interference. Think of it as a bouncer at a club who only lets in people who aren't causing trouble. The trap achieves a -60 dB attenuation at 50 Hz, effectively reducing this noise.
+
+2. **High-Pass Digital Filter**: This filter is used to remove low-frequency noise, including baseline drift, which can obscure the sEMG signal. Baseline drift is like a slow-moving wave that can make it hard to see the real signal. The high-pass filter acts like a sieve, letting through only the higher frequency signals and blocking the slow-moving waves.
+
+3. **Low-Pass Digital Filter**: This filter is used to remove high-frequency noise, which can be caused by electrical interference or other sources. Imagine trying to hear a conversation while someone is playing a high-pitched whistle in the background. The low-pass filter helps to remove these high-pitched noises, making the conversation (or in this case, the sEMG signal) clearer.
+
+### Butterworth IIR Filter
+
+The Butterworth filter is chosen for its smooth frequency response in the passband, meaning it does not have ripples and provides a smooth response. The Infinite Impulse Response (IIR) design allows for efficient implementation with fewer coefficients compared to Finite Impulse Response (FIR) filters, making it suitable for real-time applications.
+
+Here's a simple Python code snippet to design a Butterworth IIR filter:
+
+```python
+from scipy.signal import butter, lfilter
+
+# Design a Butterworth IIR filter
+def butterworth_filter(data, cutoff, fs, order=5, filter_type='low'):
+    nyquist = 0.5 * fs
+    normal_cutoff = cutoff / nyquist
+    b, a = butter(order, normal_cutoff, btype=filter_type, analog=False)
+    filtered_data = lfilter(b, a, data)
+    return filtered_data
+
+# Example usage
+import numpy as np
+
+# Generate a sample signal with noise
+fs = 500  # Sampling frequency
+t = np.linspace(0, 1.0, fs)
+signal = np.sin(2 * np.pi * 5 * t) + 0.5 * np.random.randn(t.size)
+
+# Apply the Butterworth filter
+cutoff = 50  # Cutoff frequency
+filtered_signal = butterworth_filter(signal, cutoff, fs, order=4, filter_type='low')
+```
+
+## Results
+
+Experimental results demonstrate that the filtering process achieves:
+
+- **-60 dB Trap Attenuation at 50 Hz**: This significant reduction in the 50 Hz noise component ensures that industrial frequency interference is effectively mitigated.
+- **Effective Filtering of Both High-and Low-Frequency Signals**: The combination of high-pass and low-pass filters ensures that the sEMG signal is free from both low-frequency baseline drift and high-frequency noise.
+
+These results support the subsequent miniaturization of EMG bio-devices, making them more practical for wearable applications and extensive use in various fields such as rehabilitation, sports science, and human-computer interaction.
+
+## Conclusion
+
+The designed Butterworth IIR digital filter effectively replaces high-cost analog filters, providing a cost-effective solution for obtaining desirable sEMG signals. This innovation supports the miniaturization of EMG bio-devices, making them more accessible for various applications. The successful implementation of this digital filter design demonstrates its potential for improving the quality and usability of sEMG signals in practical applications.
+
+## References
+
+1. Zeyu Xiao, Jiaxiang Ye, +3 authors Han Xiao. "Analysis of Digital Filtering Design Based on Surface EMG Signals." 2023 IEEE 3rd International Conference on Electronic Communications, Internet of Things and Big Data (ICEIB), 14 April 2023. DOI: 10.1109/ICEIB57887.2023.10170168.
+2. Latif Rozaqi, Asep Nugroho, Kadek Heri Sanjaya, Artha Ivonita Simbolon. "Design of Analog and Digital Filter of Electromyography." 2019 International Conference on Sustainable Energy Engineering and Application (ICSEEA), 2019.
+3. Lei Shi, Kunpeng Wang, Z. Liu. "Design, Development and Testing of a Wearable sEMG Acquisition System." 2019 IEEE Intl Conf on Dependable, Autonomic and Secure Computing, 2019.
+4. Jiajia Wu, Xiaoou Li, Wanyang Liu, Z. Jane Wang. "sEMG Signal Processing Methods: A Review." Journal of Physics: Conference Series, 2019.
+5. Sangsoo Park, Hojun Yeom. "Design and Implementation of Real-time Electrical Stimulation Artifact Suppression based on STM32." Turkish Journal of Computer and Mathematics Education, 2021.

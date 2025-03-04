@@ -1,0 +1,78 @@
+---
+published: true
+title: "Psycho-physiological Training Approach for Amputee Rehabilitation"
+description: An innovative project that revolutionizes the way we interact with technology.
+date: 2024-11-19
+url: https://pubmed.ncbi.nlm.nih.gov/25793347/
+---
+
+export const title = "Psycho-physiological Training Approach for Amputee Rehabilitation";
+
+# {title}
+
+## Introduction
+
+Electromyography (EMG) signals are like the electrical whispers of your muscles. When your muscles contract, they generate these signals, which can be captured and analyzed to understand muscle function. These signals are especially important for controlling prosthetic limbs. However, EMG signals are often noisy, like trying to hear a whisper in a crowded room, making them difficult to capture accurately. Traditional methods use analog circuits for amplification and filtering, but these can be unstable and unreliable.
+
+## Frequency Range of EMG Signals
+
+Surface EMG signals cover a wide frequency range from 6Hz to 600Hz, with the most important signals falling between 20Hz and 150Hz. Imagine trying to tune into a radio station; you need to filter out all the static and other stations to hear your favorite song clearly. Similarly, processing EMG signals requires precise amplification and filtering to isolate the useful data from the noise.
+
+## Project Aim
+
+The goal of this project was to develop a reliable and easy-to-use method for analyzing EMG signals across their entire frequency range. Instead of using traditional analog techniques, we designed a digital signal processing approach. This method involves converting the time-domain signals (how the signal changes over time) into the frequency domain (breaking the signal down into its component frequencies), which provides a clearer picture of the data.
+
+## Methodology
+
+### Signal Processing Technique
+
+We implemented our signal processing technique on an Arduino Uno board. This digital approach eliminates the need for analog amplifiers and filters, which can be unstable. By performing all tasks such as amplification, filtering, and thresholding digitally on the Arduino board, we created a more stable and reliable system.
+
+Here's a simple Python code snippet to illustrate how you might perform a basic Fast Fourier Transform (FFT) to convert a time-domain signal to the frequency domain:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate a sample signal with noise
+fs = 1000  # Sampling frequency
+t = np.linspace(0, 1.0, fs)
+signal = np.sin(2 * np.pi * 50 * t) + 0.5 * np.random.randn(t.size)
+
+# Perform FFT
+fft_signal = np.fft.fft(signal)
+frequencies = np.fft.fftfreq(len(fft_signal), 1/fs)
+
+# Plot the frequency spectrum
+plt.plot(frequencies, np.abs(fft_signal))
+plt.title('Frequency Spectrum')
+plt.xlabel('Frequency (Hz)')
+plt.ylabel('Amplitude')
+plt.show()
+```
+
+### Spectrum Analysis
+
+Converting time-domain signals to the frequency domain allows for a more detailed analysis of the EMG signals. This process is like breaking down a complex recipe into its individual ingredients, making it easier to identify and isolate the useful parts from the noise.
+
+## Psychophysiological Approach to Rehabilitation
+
+The detailed data obtained from spectrum analysis can be used for a new rehabilitation method, especially for controlling prosthetic limbs. This psychophysiological approach can reduce the cost of myoelectric arms and increase their efficiency. By allowing users to control their muscles in a less stressful environment, this method enhances the overall rehabilitation process.
+
+## Practical Application
+
+To demonstrate the effectiveness of this approach, we used DSP-processed EMG signals to play an online game. This practical application shows how the technique can be used in real-world rehabilitation scenarios, providing a fun and engaging way for users to train and improve their muscle control.
+
+## Conclusion
+
+This innovative signal processing technique offers a stable and reliable solution for analyzing EMG signals. By leveraging spectrum analysis and digital processing on an Arduino Uno board, we developed a cost-effective and efficient method for prosthesis control. This psychophysiological approach to rehabilitation has the potential to significantly benefit amputees by providing a less stressful and more effective training environment.
+
+## Authors
+
+- Chandan Dhal
+- Akshat Wahi
+
+## References
+
+- PMID: 25793347
+- DOI: 10.2345/0899-8205-49.2.138
